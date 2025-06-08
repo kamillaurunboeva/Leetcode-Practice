@@ -4,9 +4,6 @@ import Foundation
 /*Given the array nums, for each nums[i] find out how many numbers in the array are smaller than it. That is, for each nums[i] you have to count the number of valid j's such that j != i and nums[j] < nums[i].
  
  Return the answer in an array.
-
-  
-
  Example 1:
 
  Input: nums = [8,1,2,2,3]
@@ -33,3 +30,15 @@ import Foundation
  0 <= nums[i] <= 100*/
 
 
+class Solution {
+    func smallerNumbersThanCurrent(_ nums: [Int]) -> [Int] {
+        
+var result: [Int] = []
+
+for num in nums {
+    let count = nums.filter { $0 < num }.count 
+        result.append(count)
+    }
+    return result
+}
+}
