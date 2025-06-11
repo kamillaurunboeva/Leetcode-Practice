@@ -42,3 +42,25 @@ for num in nums {
     return result
 }
 }
+// Two-Pointer (Only for Sorted Arrays)
+
+
+func twoSumSorted(_ nums: [Int], _ target: Int) -> [Int] {
+    let sorted = nums.sorted()
+    var left = 0
+    var right = sorted.count - 1
+
+    while left < right {
+        let sum = sorted[left] + sorted[right]
+
+        if sum == target {
+            return [sorted[left], sorted[right]]
+        } else if sum < target {
+            left += 1
+        } else {
+            right -= 1
+        }
+    }
+    return []
+}
+
